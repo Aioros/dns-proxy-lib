@@ -1,20 +1,20 @@
 {
-  "name": "dns-proxy",
-  "version": "1.1.0",
+  "name": "dns-proxy-lib",
+  "version": "1.0.0",
   "description": "Simple DNS Proxy written in Node.JS. Override hosts, domains, or tlds.",
   "bin": {
-    "dns-proxy": "dns-proxy.js"
+    "dns-proxy": "run-server.js"
   },
   "main": "dns-proxy.js",
   "preferGlobal": true,
-  "author": "Erik Kristensen <erik@erikkristensen.com>",
+  "author": "Aioros",
   "license": "MIT",
-  "repository": "ekristen/dns-proxy",
+  "repository": "aioros/dns-proxy-lib",
   "scripts": {
-    "start": "node ./dns-proxy.js",
+    "start": "node ./run-server.js",
     "test": "npm run test:standard",
     "test:standard": "standard *.js",
-    "pkg": "pkg --out-dir release --targets node8-macos-x64,node8-alpine-x64,node8-linux-x64,node8-win dns-proxy.js"
+    "pkg": "pkg --out-dir release --targets node8-macos-x64,node8-alpine-x64,node8-linux-x64,node8-win run-server.js"
   },
   "dependencies": {
     "debug": "^4.0.0",
