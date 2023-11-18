@@ -148,4 +148,7 @@ server.on('message', function (message, rinfo) {
   }(message, nameserver))
 })
 
-server.bind(config.port, config.host)
+module.exports = {
+  server,
+  config
+}
