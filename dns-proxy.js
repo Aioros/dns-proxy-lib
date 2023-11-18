@@ -10,7 +10,7 @@ const util = require('./util.js')
 
 const defaults = {
   port: 53,
-  host: '127.0.0.1',
+  host: '0.0.0.0',
   logging: 'dnsproxy:query,dnsproxy:info',
   nameservers: [
     '1.1.1.1',
@@ -55,7 +55,7 @@ if (config.reload_config === true && typeof config.config !== 'undefined') {
 
 logdebug('options: %j', config)
 
-const server = dgram.createSocket('udp4')
+const server = dgram.createSocket({type:'udp4',reuseAddr:true})
 
 server.on('listening', function () {
   loginfo('we are up and listening at %s on %s', config.host, config.port)
