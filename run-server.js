@@ -1,2 +1,5 @@
-const dnsProxy = require("./dns-proxy.js")
-dnsProxy.server.bind(dnsProxy.config.port, dnsProxy.config.host)
+#!/usr/bin/env node
+
+const DnsProxyServer = require("./dns-proxy.js")
+dns = new DnsProxyServer();
+dns.run();
