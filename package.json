@@ -1,5 +1,5 @@
 {
-  "name": "@aioros/dns-proxy-lib",
+  "name": "@aiorosdev/dns-proxy-lib",
   "version": "1.0.0",
   "description": "Simple DNS Proxy written in Node.JS. Override hosts, domains, or tlds.",
   "bin": {
