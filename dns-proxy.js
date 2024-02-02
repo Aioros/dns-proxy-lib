@@ -25,6 +25,8 @@ const defaults = {
   reload_config: true
 }
 
+var messageCallback
+
 module.exports = function DnsProxyServer(conf) {
 
   let config
@@ -77,6 +79,9 @@ module.exports = function DnsProxyServer(conf) {
     const query = packet.parse(message)
     const domain = query.question[0].name
     const type = query.question[0].type
+    
+    if (messageCallback)
+      messageCallback(message, rinfo)
 
     logdebug('query: %j', query)
 
@@ -156,5 +161,9 @@ module.exports = function DnsProxyServer(conf) {
   this.config = config
   this.run = () => { this.socket.bind(this.config.port, this.config.host) }
   this.stop = () => { this.socket.close() }
+
+  this.onMessageReceived = (callback) => {
+    messageCallback = callback
+  }
 
 }

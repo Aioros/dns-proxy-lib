@@ -1,6 +1,6 @@
 {
   "name": "@aiorosdev/dns-proxy-lib",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Simple DNS Proxy written in Node.JS. Override hosts, domains, or tlds.",
   "bin": {
     "dns-proxy": "run-server.js"
